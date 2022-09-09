@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cars</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+
+
+<div th:each="el : ${cars}" align="center">
+    <form th:object="${cars}" th:action="'/cars/edit/'+${el.id}" method="post">
+        <p>Название
+        <input th:field="*{name}" type="text" style="background-color: chocolate" th:value="${el.name}" id="name" name="name" placeholder="Название"><br>
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+        </p>
+        <p>Дата
+        <input th:field="*{date}" id="date" style="background-color: chocolate" th:value="${el.date}"  name="date" placeholder="Дата"><br>
+        <div th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
+        </p>
+        <p>Количество
+        <input th:field="*{kolichestvo}" type="text" style="background-color: chocolate" th:value="${el.kolichestvo}" id="kolichestvo" name="kolichestvo" placeholder="Количество"><br>
+        <div th:if="${#fields.hasErrors('kolichestvo')}" th:errors="*{kolichestvo}"></div>
+        </p>
+        <p>Цена
+        <input th:field="*{cena}" type="text" style="background-color: chocolate" id="cena" name="cena" th:value="${el.cena}" placeholder="Цена"><br>
+        <div th:if="${#fields.hasErrors('cena')}" th:errors="*{cena}"></div>
+        </p>
+        <p>Кол-во лошадиных сил
+        <input th:field="*{moshnost}" type="text" style="background-color: chocolate" id="moshnost" th:value="${el.moshnost}" name="moshnost" placeholder="Кол-во лошадиных сил"><br>
+        <div th:if="${#fields.hasErrors('moshnost')}" th:errors="*{moshnost}"></div>
+        </p>
+        <input type="submit" value="Изменить машину" class="btn btn-success"><br>
+        <a href="/cars/" class="btn btn-primary">Назад к машинам</a>
+    </form><br>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Games</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="fragments/header :: defaultheader"></div>
+
+<form th:object="${games}" action="/games/add" method="post">
+  <p>Название
+    <input th:field="*{name}" type="text" id="name" name="name" placeholder="Название"><br>
+  <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+  </p>
+  <p>Дата
+    <input th:field="*{date}" type="text" id="date" name="date" placeholder="Дата"><br>
+  <div th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
+  </p>
+  <p>Жанр
+    <input th:field="*{jenre}" type="text" id="jenre" name="jenre" placeholder="Жанр"><br>
+  <div th:if="${#fields.hasErrors('jenre')}" th:errors="*{jenre}"></div>
+  </p>
+  <p>Цена
+    <input th:field="*{cena}" type="number" id="cena" name="cena" placeholder="Цена"><br>
+  <div th:if="${#fields.hasErrors('cena')}" th:errors="*{cena}"></div>
+  </p>
+  <p>Кол-во проданных копиий
+    <input th:field="*{prodajKopii}" type="number" id="prodajKopii" name="prodajKopii" placeholder="Кол-во проданных копий игры"><br>
+  <div th:if="${#fields.hasErrors('prodajKopii')}" th:errors="*{prodajKopii}"></div>
+  </p>
+  <input type="submit" value="Добавить игру" class="btn btn-success"><br>
+</form><br>
+
+<a href="/games/" class="btn btn-primary">Назад</a>
+
+</body>
+</html>
