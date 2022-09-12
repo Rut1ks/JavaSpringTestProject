@@ -19,15 +19,15 @@
         <div th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
         </p>
         <p>Количество
-        <input th:field="*{kolichestvo}" type="text" style="background-color: chocolate" th:value="${el.kolichestvo}" id="kolichestvo" name="kolichestvo" placeholder="Количество"><br>
+        <input th:field="*{kolichestvo}" type="number" style="background-color: chocolate" th:value="${el.kolichestvo}" id="kolichestvo" name="kolichestvo" placeholder="Количество"><br>
         <div th:if="${#fields.hasErrors('kolichestvo')}" th:errors="*{kolichestvo}"></div>
         </p>
         <p>Цена
-        <input th:field="*{cena}" type="text" style="background-color: chocolate" id="cena" name="cena" th:value="${el.cena}" placeholder="Цена"><br>
+        <input th:field="*{cena}" type="number" style="background-color: chocolate" id="cena" name="cena" th:value="${el.cena}" placeholder="Цена"><br>
         <div th:if="${#fields.hasErrors('cena')}" th:errors="*{cena}"></div>
         </p>
         <p>Кол-во лошадиных сил
-        <input th:field="*{moshnost}" type="text" style="background-color: chocolate" id="moshnost" th:value="${el.moshnost}" name="moshnost" placeholder="Кол-во лошадиных сил"><br>
+        <input th:field="*{moshnost}" type="number" style="background-color: chocolate" id="moshnost" th:value="${el.moshnost}" name="moshnost" placeholder="Кол-во лошадиных сил"><br>
         <div th:if="${#fields.hasErrors('moshnost')}" th:errors="*{moshnost}"></div>
         </p>
         <input type="submit" value="Изменить машину" class="btn btn-success"><br>

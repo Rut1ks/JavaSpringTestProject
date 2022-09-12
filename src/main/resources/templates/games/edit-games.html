@@ -23,11 +23,11 @@
     <div th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
     </p>
     <p>Цена
-      <input style="background-color: chocolate" type="text" id="cena" name="cena" th:field="*{cena}" th:value="${el.cena}" placeholder="Цена"><br>
+      <input style="background-color: chocolate" type="number" id="cena" name="cena" th:field="*{cena}" th:value="${el.cena}" placeholder="Цена"><br>
     <div th:if="${#fields.hasErrors('cena')}" th:errors="*{cena}"></div>
     </p>
     <p>Кол-во проданных копий
-      <input style="background-color: chocolate" type="text" id="prodajKopii" th:field="*{prodajKopii}" th:value="${el.prodajKopii}" name="prodajKopii" placeholder="Кол-во проданных копий"><br>
+      <input style="background-color: chocolate" type="number" id="prodajKopii" th:field="*{prodajKopii}" th:value="${el.prodajKopii}" name="prodajKopii" placeholder="Кол-во проданных копий"><br>
     <div th:if="${#fields.hasErrors('prodajKopii')}" th:errors="*{prodajKopii}"></div>
     </p>
 

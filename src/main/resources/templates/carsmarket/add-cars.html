@@ -17,15 +17,15 @@
   <div th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
   </p>
   <p>Количество
-    <input th:field="*{kolichestvo}" type="text"  id="kolichestvo" name="kolichestvo" placeholder="Количество"><br>
+    <input th:field="*{kolichestvo}" type="number"  id="kolichestvo" name="kolichestvo" placeholder="Количество"><br>
   <div th:if="${#fields.hasErrors('kolichestvo')}" th:errors="*{kolichestvo}"></div>
   </p>
   <p>Цена
-    <input th:field="*{cena}" type="text"  id="cena" name="cena" placeholder="Цена"><br>
+    <input th:field="*{cena}" type="number"  id="cena" name="cena" placeholder="Цена"><br>
   <div th:if="${#fields.hasErrors('cena')}" th:errors="*{cena}"></div>
   </p>
   <p>Кол-во лошадиных сил
-    <input th:field="*{moshnost}" type="text"  id="moshnost" name="moshnost" placeholder="Кол-во лошадиных сил"><br>
+    <input th:field="*{moshnost}" type="number"  id="moshnost" name="moshnost" placeholder="Кол-во лошадиных сил"><br>
   <div th:if="${#fields.hasErrors('moshnost')}" th:errors="*{moshnost}"></div>
   </p>
   <input type="submit" value="Добавить машину" class="btn btn-success"><br>
