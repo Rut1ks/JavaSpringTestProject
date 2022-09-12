@@ -9,10 +9,15 @@
 
 
 <div align="center" th:each="el : ${games}">
+    Название
     <h2 th:text="${el.name}"></h2>
+    Дата
     <h3 th:text="${el.date}"></h3>
+    Жанр
     <h3 th:text="${el.jenre}"></h3>
+    Цена
     <h3 th:text="${el.cena}"></h3>
+    Копии
     <h3 th:text="${el.prodajKopii}"></h3>
     <a th:href="'/games/del/' + ${el.id}" class="btn btn-danger">Удалить</a>
     <a th:href="'/games/edit/' + ${el.id}" class="btn btn-warning">Изменить</a><br>

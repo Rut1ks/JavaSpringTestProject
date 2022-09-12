@@ -8,11 +8,16 @@
 <div th:insert="fragments/header :: defaultheader"></div>
 
 <div align="center" th:each="el : ${cars}">
+    Название
     <h2 th:text="${el.name}"></h2>
+    Дата
     <h3 th:text="${el.date}"></h3>
-    <p th:text="${el.kolichestvo}"></p>
-    <p th:text="${el.cena}"></p>
-    <p th:text="${el.moshnost}"></p>
+    Количество
+    <h3 th:text="${el.kolichestvo}"></h3>
+    Цена
+    <h3 th:text="${el.cena}"></h3>
+    Мощность
+    <h3 th:text="${el.moshnost}"></h3>
     <a th:href="'/cars/del/' + ${el.id}" class="btn btn-danger">Удалить</a>
     <a th:href="'/cars/edit/' + ${el.id}" class="btn btn-warning">Изменить</a><br>
     <a href="/cars/" class="btn btn-primary">Назад к машинам</a>
