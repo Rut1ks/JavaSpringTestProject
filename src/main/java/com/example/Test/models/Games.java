@@ -19,7 +19,7 @@ public class Games {
     String date;
     @NotEmpty(message = "Поле не может быть пустым")
     String jenre;
-    @Min(message = "Количество не может быть отрицательным",value = 0)
+    @Min(message = "Число не может быть отрицательным",value = 0)
     @NotNull(message = "Поле не может быть пустым")
     Integer cena,prodajKopii;
 

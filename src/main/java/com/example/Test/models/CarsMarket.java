@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -20,8 +21,12 @@ public class CarsMarket {
     @NotEmpty(message = "Поле не может быть пустым")
     String date;
     @NotNull(message = "Поле не может быть пустым")
-    @Min(message = "Количество не может быть отрицательным",value = 0)
-    Integer kolichestvo, cena, moshnost;
+    @Min(message = "Число не может быть отрицательным",value = 0)
+    Integer kolichestvo, cena;
+    @NotNull(message = "Поле не может быть пустым")
+    @Min(message = "Число не может быть отрицательным",value = 0)
+    @Max(message="Число не иожет превышать 5000",value = 5000)
+    Integer moshnost;
 
     public CarsMarket(String name, String date, Integer kolichestvo, Integer cena, Integer moshnost) {
         this.name = name;
