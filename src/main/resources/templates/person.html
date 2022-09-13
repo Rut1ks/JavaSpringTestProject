@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments/header :: defaultheader"></div>
+<head>
+    <title>Добавление нового студента</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<br>
+<center>
+<form th:action="${'/users/add/'}" method="post" >
+    Имя:
+        <select  name="student">
+            <div th:each="element : ${students}">
+                <option th:text="${element.name}"></option>
+            </div>
+        </select>
+    <br>
+    Университет:
+    <select  name="universiti">
+            <div th:each="element : ${universities}">
+                <option th:text="${element.name}"></option>
+            </div>
+        </select>
+    <br>
+    <br>
+    <button class="btn btn-warning" type="submit">Добавить (многие ко многим)</button>
+</form>
+</center>
+</body>
+</html>
