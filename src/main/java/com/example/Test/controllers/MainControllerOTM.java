@@ -1,7 +1,7 @@
 package com.example.Test.controllers;
 
 import com.example.Test.models.Address;
-import com.example.Test.models.Users;
+import com.example.Test.models.Person;
 import com.example.Test.repositories.AddressRepository;
 import com.example.Test.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +29,8 @@ public class MainControllerOTM {
     public String blogPostAdd(@RequestParam String name, @RequestParam String street, Model model)
     {
         Address address = addressRepository.findByStreet(street);
-        Users users = new Users(name, address);
-        personRepository.save(users);
+        Person person = new Person(name, address);
+        personRepository.save(person);
         return "redirect:/personOTM/";
     }
 }

@@ -13,7 +13,7 @@ public class Address {
     private String building;
 
     @OneToMany (mappedBy = "address", fetch = FetchType.EAGER)
-    private Collection<Users> tenants;
+    private Collection<Person> tenants;
 
     public Long getId() {
         return id;
@@ -47,11 +47,11 @@ public class Address {
         this.building = building;
     }
 
-    public Collection<Users> getTenants() {
+    public Collection<Person> getTenants() {
         return tenants;
     }
 
-    public void setTenants(Collection<Users> tenants) {
+    public void setTenants(Collection<Person> tenants) {
         this.tenants = tenants;
     }
 }
