@@ -6,6 +6,7 @@ import com.example.Test.models.Games;
 import com.example.Test.models.News;
 import com.example.Test.repositories.GamesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/games")
+@PreAuthorize("hasAnyAuthority('ADMIN')")
 public class GamesController {
 
 
